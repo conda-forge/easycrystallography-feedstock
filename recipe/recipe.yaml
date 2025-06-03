@@ -1,6 +1,6 @@
 context:
   name: easycrystallography
-  version: "0.8.0"
+  version: "0.8.1"
   python_min: "3.10"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/easycrystallography-${{ version }}.tar.gz
-  sha256: 228657b14992bd2cb4d28381f1b03c1b070dd7c3df3a65f577cd1c2a6fed7c36
+  sha256: 5b5b16f43680c144821be0f444598288c26cb97157e59adbb8f5b8ab8e493d0a
 
 build:
   number: 0
