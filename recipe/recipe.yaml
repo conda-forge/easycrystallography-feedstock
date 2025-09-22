@@ -1,7 +1,7 @@
 context:
   name: easycrystallography
   version: "0.9.0"
-  python_min: "3.10"
+  python_min: "3.11"
 
 package:
   name: ${{ name|lower }}
@@ -23,18 +23,33 @@ requirements:
     - versioningit
     - pip
   run:
-    - python >=${{ python_min }},<3.13
+    - python >=${{ python_min }},<3.14
+    - asteval
     - easyscience
     - gemmi
+    - numpy
     - periodictable
+    - uncertainties
     - versioningit
+    - xarray
 
 tests:
   - python:
       imports:
         - easycrystallography
-      pip_check: false
+      pip_check: true
       python_version: ${{ python_min }}.*
+  - files:
+      source:
+        - tests
+        - pyproject.toml
+    requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+        - pytest
+    script:
+      - pytest tests/
 
 about:
   homepage: https://easyscience.github.io/EasyCrystallography/
